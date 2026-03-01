@@ -46,12 +46,14 @@ This project represents my hands-on expertise as a **QA Automation Engineer**.
 
 This project follows a clean, layered automation architecture designed for scalability, readability, and maintainability.
 DemoProject
-│
-├── src/test/java
-│ ├── pages → Page Object classes
-│ ├── tests → Test classes
-│ ├── utils → Driver & helper utilities
-│
-├── test-output → TestNG results
-├── allure-results → Allure raw results
-├── pom.xml → Project configuration
+src/
+├── main/
+│   └── java/com/demo/
+│       ├── config/        # Configuration classes
+│       ├── utils/         # Utility functions
+│       └── base/          # Base classes
+└── test/
+    └── java/com/demo/
+        ├── tests/         # Test cases
+        ├── pages/         # Page Object Models
+        └── data/          # Test data
