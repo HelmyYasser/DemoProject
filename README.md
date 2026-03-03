@@ -42,18 +42,26 @@ This project represents my hands-on expertise as a **QA Automation Engineer**.
 
 ---
 
-## 🧱 Framework Architecture – Detailed Overview
+## 🏗 Framework Architecture
 
-This project follows a clean, layered automation architecture designed for scalability, readability, and maintainability.
-DemoProject
-src/
-├── main/
-│   └── java/com/demo/
-│       ├── config/        # Configuration classes
-│       ├── utils/         # Utility functions
-│       └── base/          # Base classes
-└── test/
-    └── java/com/demo/
-        ├── tests/         # Test cases
-        ├── pages/         # Page Object Models
-        └── data/          # Test data
+| Layer | Responsibility |
+|-------|---------------|
+| **Base Layer** | Driver setup, teardown, shared configuration |
+| **Page Layer** | Encapsulates UI elements & actions (POM) |
+| **Test Layer** | Contains test logic & assertions |
+| **Utilities Layer** | Reusable helpers (waits, logging, config) |
+| **Reporting Layer** | Allure integration & failure screenshots |
+| **Build Layer** | Maven dependency & lifecycle management |
+
+---
+
+### 🔄 Execution Flow
+
+Test Class  
+→ BaseTest Setup  
+→ Driver Initialization  
+→ Page Interaction  
+→ Assertion (TestNG)  
+→ Logging & Screenshot  
+→ Allure Reporting  
+→ Driver Teardown
