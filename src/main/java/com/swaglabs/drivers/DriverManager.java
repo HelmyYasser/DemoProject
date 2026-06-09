@@ -1,7 +1,6 @@
 package com.swaglabs.drivers;
 
 import com.swaglabs.utils.LogsUtil;
-import com.swaglabs.utils.PropertiesUtils;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
@@ -16,7 +15,7 @@ public class DriverManager {
         // Private constructor to prevent instantiation
     }
 
-    //create instance of driver
+    // create instance of driver
     @Step("Creating driver instance for browser: {browserName}")
     public static WebDriver createDriverInstance(String browserName) {
         WebDriver driver = DriverFactory.getDriver(browserName);
