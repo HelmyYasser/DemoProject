@@ -23,6 +23,7 @@ public void testSuccessfulLogin( ) {
                 .enterPassword(testData.getJsonData("login-credentials.password"))
                 .clickLoginButton()
                 .isLoginSuccessfulSoft();
+        CustomSoftAssertion.customAssertAll();
 
     }
 

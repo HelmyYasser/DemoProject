@@ -9,12 +9,16 @@ import java.util.Properties;
 import java.io.IOException;
 
 public class PropertiesUtils {
+    public final static String PROPERTIES_PATH = "src/main/resources/";
+
+    static {
+        loadProperties();
+    }
+
     private PropertiesUtils() {
         super();
         // Private constructor to prevent instantiation
     }
-
-    public final static String PROPERTIES_PATH = "src/main/resources/";
 
     public static Properties loadProperties() {
         try {

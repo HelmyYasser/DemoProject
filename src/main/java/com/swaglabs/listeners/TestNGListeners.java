@@ -4,6 +4,7 @@ import com.swaglabs.utils.AllureUtils;
 import com.swaglabs.utils.FilesUtils;
 import com.swaglabs.utils.LogsUtil;
 import com.swaglabs.utils.ScreenshotsUtils;
+import com.swaglabs.utils.CustomSoftAssertion;
 import org.testng.*;
 import java.io.File;
 import static com.swaglabs.utils.PropertiesUtils.loadProperties;
@@ -20,8 +21,6 @@ public class TestNGListeners implements IExecutionListener, ITestListener, IInvo
 
     @Override
     public void onExecutionStart() {
-        LogsUtil.info("Test suite execution started.");
-        loadProperties();
         FilesUtils.deleteFiles(allureResults);
         FilesUtils.cleanDirectory(logs);
         FilesUtils.cleanDirectory(screenshots);
@@ -29,11 +28,18 @@ public class TestNGListeners implements IExecutionListener, ITestListener, IInvo
         FilesUtils.createDirectory(logs);
         FilesUtils.createDirectory(screenshots);
 
+        loadProperties();
+        LogsUtil.info("Test suite execution started.");
     }
 
     @Override
     public void onExecutionFinish() {
         LogsUtil.info("Test suite execution finished.");
+    }
+
+    @Override
+    public void onTestStart(ITestResult result) {
+        CustomSoftAssertion.reset();
     }
 
     @Override

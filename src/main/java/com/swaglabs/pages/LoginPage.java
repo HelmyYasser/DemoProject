@@ -82,7 +82,7 @@ public class LoginPage {
     //Check Unsuccessful Login
     @Step ("Verifying login is unsuccessful with hard assertion")
     public LoginPage isLoginUnsuccessful() {
-        Validations.validateEquals(getErrorMessage(), getPropertyValue("errorMSG"), "Error message does not match expected.");
+        Validations.validateEquals(getErrorMessage(), getPropertyValue("errorMessage"), "Error message does not match expected.");
         return this;
     }
 }

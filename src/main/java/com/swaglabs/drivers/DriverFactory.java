@@ -14,6 +14,9 @@ import java.util.Map;
 
 public class DriverFactory {
     public static WebDriver getDriver(String browserName) {
+        if (browserName == null || browserName.isBlank()) {
+            browserName = "chrome";
+        }
         switch (browserName.toLowerCase()) {
             case "chrome":
                 ChromeOptions options = getChromeOptions();
